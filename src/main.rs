@@ -79,7 +79,6 @@ impl<'r> FromRequest<'r> for User {
 
 async fn get_id_from_token(store: &mut Connection<Store>, api_key: String) -> Option<Uuid> {
     let maybe_id: Result<String, _> = store.get(format!("api_token:{}", &api_key)).await;
-    dbg!(&maybe_id);
 
     let id = match maybe_id {
         Ok(id) => Some(id),

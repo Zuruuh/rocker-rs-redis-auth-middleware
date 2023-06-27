@@ -128,17 +128,7 @@ source = "registry+https://github.com/rust-lang/crates.io-index"
 checksum = "2b8bde44cbfdf17ae5baa45c9f43073b320f1a19955389315629304a23909ad2"
 dependencies = [
  "deadpool",
- "redis 0.22.3",
-]
-
-[[package]]
-name = "deadpool-redis"
-version = "0.12.0"
-source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "5f1760f60ffc6653b4afd924c5792098d8c00d9a3deb6b3d989eac17949dc422"
-dependencies = [
- "deadpool",
- "redis 0.23.0",
+ "redis",
 ]
 
 [[package]]
@@ -821,25 +811,6 @@ dependencies = [
 ]
 
 [[package]]
-name = "redis"
-version = "0.23.0"
-source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "3ea8c51b5dc1d8e5fd3350ec8167f464ec0995e79f2e90a075b63371500d557f"
-dependencies = [
- "async-trait",
- "bytes",
- "combine",
- "futures-util",
- "itoa",
- "percent-encoding",
- "pin-project-lite",
- "ryu",
- "tokio",
- "tokio-util",
- "url",
-]
-
-[[package]]
 name = "redox_syscall"
 version = "0.3.5"
 source = "registry+https://github.com/rust-lang/crates.io-index"
@@ -966,7 +937,7 @@ source = "registry+https://github.com/rust-lang/crates.io-index"
 checksum = "e841c280fd98c042cd3d0353c31920da78a4eb19b12f0e0e3b7a362abe66bec0"
 dependencies = [
  "deadpool",
- "deadpool-redis 0.11.1",
+ "deadpool-redis",
  "rocket",
  "rocket_db_pools_codegen",
  "version_check",
@@ -1013,8 +984,6 @@ dependencies = [
 name = "rust-auth-middleware"
 version = "0.1.0"
 dependencies = [
- "deadpool",
- "deadpool-redis 0.12.0",
  "rocket",
  "rocket_db_pools",
  "uuid",
